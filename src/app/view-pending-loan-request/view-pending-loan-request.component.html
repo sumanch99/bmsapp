@@ -27,35 +27,39 @@
                     Branch</a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Requests</a>
             </div>
-            <h3>Pending Loan Requests</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Loan Id</th>
-                        <th scope="col">Loan Type</th>
-                        <th scope="col">Account Number</th>
-                        <th scope="col">Gurantor Acc. No.</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Tenure</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let loan of pendingLoans">
-                        <td scope="row">{{loan.loan_id}}</td>
-                        <td>{{loan.loanCode}}</td>
-                        <td>{{loan.accNo}}</td>
-                        <td>{{loan.gurantorAccNo}}</td>
-                        <td>{{loan.amount}}</td>
-                        <td>{{loan.tenure}}</td>
-                        <td><button class="btn btn-primary" (click)="onClickGrantLoan(loan)">Grant Loan</button></td>
-                        <td><button class="btn btn-danger" (click)="onClickReject(loan.loan_id)">Reject Loan</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container mt-3">
+                <h3>Pending Loan Requests</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Loan Id</th>
+                            <th scope="col">Loan Type</th>
+                            <th scope="col">Account Number</th>
+                            <th scope="col">Gurantor Acc. No.</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Tenure</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let loan of pendingLoans">
+                            <td scope="row">{{loan.loan_id}}</td>
+                            <td>{{loan.loanCode}}</td>
+                            <td><a [routerLink]="['/view-account', loan.accNo]">{{loan.accNo}}</a></td>
+                            <td><a [routerLink]="['/view-account', loan.accNo]">{{loan.gurantorAccNo}}</a></td>
+                            <td>{{loan.amount}}</td>
+                            <td>{{loan.tenure}}</td>
+                            <td><button class="btn btn-primary" (click)="onClickGrantLoan(loan)">Grant Loan</button>
+                            </td>
+                            <td><button class="btn btn-danger" (click)="onClickReject(loan.loan_id)">Reject
+                                    Loan</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+        <!--Horizontal list-group-->
     </div>
-    <!--Horizontal list-group-->
 </div>

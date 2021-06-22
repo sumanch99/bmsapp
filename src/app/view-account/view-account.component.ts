@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Account } from '../model/account.model';
 import { DataServiceService } from '../service/data/data-service.service';
 
@@ -9,11 +10,12 @@ import { DataServiceService } from '../service/data/data-service.service';
 })
 export class ViewAccountComponent implements OnInit {
   account: Account = new Account();
-  accountNo!:number;
-  constructor(private dataService:DataServiceService) { }
+  constructor(private dataService:DataServiceService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.dataService.getAccountDetails(this.accountNo).subscribe(
+  const routeParams = this.route.snapshot.paramMap;
+  const accNoFromRoute = Number(routeParams.get('accountNo'));
+  this.dataService.getAccountDetails(accNoFromRoute).subscribe(
       response => {
         console.log(response.data);
 

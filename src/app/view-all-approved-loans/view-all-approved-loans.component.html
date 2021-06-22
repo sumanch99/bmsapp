@@ -27,32 +27,34 @@
                     Branch</a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Requests</a>
             </div>
-            <h3>Approved Loans</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Loan Id</th>
-                        <th scope="col">Loan Type</th>
-                        <th scope="col">Account Number</th>
-                        <th scope="col">Gurantor Acc. No.</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Start Date</th>
-                        <th scope="col">Tenure</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let loan of approvedLoans">
-                        <td scope="row">{{loan.loan_id}}</td>
-                        <td>{{loan.loanCode}}</td>
-                        <td>{{loan.accNo}}</td>
-                        <td>{{loan.gurantorAccNo}}</td>
-                        <td>{{loan.amount}}</td>
-                        <td>{{loan.startDate}}</td>
-                        <td>{{loan.tenure}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container mt-3">
+                <h3>Approved Loans</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Loan Id</th>
+                            <th scope="col">Loan Type</th>
+                            <th scope="col">Account Number</th>
+                            <th scope="col">Gurantor Acc. No.</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">Tenure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let loan of approvedLoans">
+                            <td scope="row">{{loan.loan_id}}</td>
+                            <td>{{loan.loanCode}}</td>
+                            <td>{{loan.accNo}}</td>
+                            <td>{{loan.gurantorAccNo}}</td>
+                            <td>{{loan.amount}}</td>
+                            <td>{{loan.startDate}}</td>
+                            <td>{{loan.tenure}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+        <!--Horizontal list-group-->
     </div>
-    <!--Horizontal list-group-->
-</div>
+    </div>
