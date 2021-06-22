@@ -10,6 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { AdminSetupComponent } from './admin-setup/admin-setup.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { ChangeInterestComponent } from './change-interest/change-interest.component';
+import {FormsModule} from '@angular/forms';
+import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/view-pending-loan-request.component';
+import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-all-approved-loans.component';
+import { ViewAccountComponent } from './view-account/view-account.component';
+
 
 
 @NgModule({
@@ -21,11 +27,16 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     HeaderComponent,
     AdminSetupComponent,
     AdminLoginComponent,
+    ChangeInterestComponent,
+    ViewPendingLoanRequestComponent,
+    ViewAllApprovedLoansComponent,
+    ViewAccountComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

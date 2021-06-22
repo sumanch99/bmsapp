@@ -14,17 +14,22 @@
           <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify FD's Rate</a>
           <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify RD's Rate</a>
         </div>
-        <div class = "col-sm-9 p-2 mr-2">
+        <div class = "col-sm-9 p-2 mr-2 bg-light">
             <!--Horizontal list-group-->
             <div class="list-group list-group-horizontal">
-             <a (click) = "viewCustomerList()" class="list-group-item list-group-item-action list-group-item-dark text-center">View Customer</a>
+             <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">View Customer</a>
              <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage Interest Rate</a>
              <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Complete Transaction List</a>
              <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage Branch</a>
              <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Requests</a>
             </div>
-            <div class ="container mt-3" *ngIf ="viewCustomer">
-               <app-customer></app-customer>
+            <div class ="container mt-3">  <!-- *ngIf ="viewCustomer" -->
+               <!-- <app-customer></app-customer> -->
+              <!-- <app-change-interest></app-change-interest> -->
+              <!-- <app-view-all-approved-loans></app-view-all-approved-loans> -->
+              <!-- <app-view-pending-loan-request></app-view-pending-loan-request> -->
+              <!-- <app-view-account></app-view-account> -->
+
             </div>
         </div>
     </div> <!--Horizontal list-group-->
