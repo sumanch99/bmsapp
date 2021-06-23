@@ -1,0 +1,14 @@
+
+<div class="container col-sm-6 pt-5 mt-5" >
+    <form #addBranchFund = "ngForm" (ngSubmit) ="!addBranchFund.invalid && onSubmit(addBranchFund)">
+        <div class="form-group">
+            <label for="amount">Enter the amount</label>
+            <input ngModel name ="amount" id ="amount" type ="number"
+            class="form-control" required #amount="ngModel">
+        </div>
+        <div class="alert alert-warning" *ngIf="amount.invalid">
+            Enter Amount
+        </div>
+        <button type="submit" [disabled]="addBranchFund.invalid" class="btn btn-primary">Sumbit</button>
+    </form>
+</div>

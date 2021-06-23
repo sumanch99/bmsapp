@@ -1,0 +1,22 @@
+<h3>List of Transactions</h3>
+<div class = "container">
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>From Account</th>
+                <th>To Account</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let transaction of transactions">
+                <td>{{transaction.amount}}</td>
+                <td>{{transaction.fromAccount}}</td>
+                <td>{{transaction.toAccount}}</td>
+                <td>{{transaction.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

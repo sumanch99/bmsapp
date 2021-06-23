@@ -10,22 +10,29 @@
           <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Account Request</a>
           <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check ATM Request</a>
           <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Loan Request</a>
-          <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify Loan's Rate</a>
-          <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify FD's Rate</a>
-          <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify RD's Rate</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify Rate</a>
         </div>
-        <div class = "col-sm-9 p-2 mr-2">
-            <!--Horizontal list-group-->
-            <div class="list-group list-group-horizontal">
-             <a (click) = "viewCustomerList()" class="list-group-item list-group-item-action list-group-item-dark text-center">View Customer</a>
-             <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage Interest Rate</a>
-             <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Complete Transaction List</a>
-             <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage Branch</a>
-             <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Requests</a>
-            </div>
-            <div class ="container mt-3" *ngIf ="viewCustomer">
-               <app-customer></app-customer>
-            </div>
+        <div class = "col-sm-9 p-2 mr-2 bg-light">
+            <!--Horizontal navbar-->
+            <nav class="navbar navbar-expand-sm justify-content-center" style="background-color:lightgrey;">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a routerLink ="/viewCustomer" class="nav-link" >View Customer</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink ="/change-interest" class="nav-link">Manage Interest Rate</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink ='/allTransactions' class="nav-link" >Complete Transaction List</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink ='/listBranches' class="nav-link" >Manage Branch</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Requests</a>
+                  </li>
+                </ul>
+              </nav>
         </div>
     </div> <!--Horizontal list-group-->
 </div>      

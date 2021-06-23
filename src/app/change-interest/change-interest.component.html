@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row pt-2">
+
+        <!--list-group-->
+
+        <div class="list-group col-sm-2 p-2 ml-5">
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Create Account</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Account Summary</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Transactions</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Account Request</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check ATM Request</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Loan Request</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify Loan's Rate</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify FD's Rate</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify RD's Rate</a>
+        </div>
+        <div class="col-sm-9 p-2 mr-2 bg-light">
+            <!--Horizontal list-group-->
+            <div class="list-group list-group-horizontal">
+                <a href="#"
+                    class=" list-group-item list-group-item-action list-group-item-dark text-center">View Customer</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage
+                    Interest Rate</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Complete
+                    Transaction List</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage
+                    Branch</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Requests</a>
+            </div>
+            <div class="container mt-3" id="content">
+                <div class="col-sm-9">
+                    <h3>Change Interest Rates</h3>
+                    <form #changeInterestRateForm="ngForm"
+                        (ngSubmit)="changeInterestRateForm.form.valid && onSubmit(changeInterestRateForm)">
+                        <label for="interestName" class="mt-4 mr-2">Interest Type :</label>
+                        <select class=" form-group form-select mt-4" aria-label="Default select example" name="plan"
+                            id="plan" required [(ngModel)]="interestPlanObj.plan">
+                            <option selected>Select Interest Type</option>
+                            <option *ngFor="let planobj of interestPlan">{{planobj.plan}}</option>
+                        </select>
+                        <br>
+                        <label for='interestRate' class="mt-2 mr-2">Enter new Interest Rate:</label>
+                        <input type="text" id="rate" name="rate" class="form-group mt-2"
+                            [(ngModel)]="interestPlanObj.rate" required placeholder="Give new Interest Rate"> <br>
+                        <button class="btn btn-primary m-3" type="submit"
+                            [disabled]="!changeInterestRateForm.valid">Submit</button>
+                        <button class="btn btn-secondary" type="reset" (click)="onClickReset()">Reset</button>
+                        <p class="text-success form-group">{{successLabel}}</p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Horizontal list-group-->
+</div>
