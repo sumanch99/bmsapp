@@ -10,8 +10,6 @@ import { HeaderComponent } from './header/header.component';
 import { AdminSetupComponent } from './admin-setup/admin-setup.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { TransactionComponent } from './transaction/transaction.component';
-import { AdminDashboardHorizontalNavComponent } from './admin-dashboard-horizontal-nav/admin-dashboard-horizontal-nav.component';
-import { AdminDashboardVerticalNavComponent } from './admin-dashboard-vertical-nav/admin-dashboard-vertical-nav.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ListBranchesComponent } from './list-branches/list-branches.component';
 import { BranchComponent } from './branch/branch.component';
@@ -21,6 +19,7 @@ import { ChangeInterestComponent } from './change-interest/change-interest.compo
 import { ViewAccountComponent } from './view-account/view-account.component';
 import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-all-approved-loans.component';
 import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/view-pending-loan-request.component';
+import { ViewInterestPlansComponent } from './view-interest-plans/view-interest-plans.component';
 
 
 @NgModule({
@@ -32,8 +31,6 @@ import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/vie
     AdminSetupComponent,
     AdminLoginComponent,
     TransactionComponent,
-    AdminDashboardHorizontalNavComponent,
-    AdminDashboardVerticalNavComponent,
     AdminDashboardComponent,
     ListBranchesComponent,
     BranchComponent,
@@ -43,6 +40,7 @@ import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/vie
     ViewAccountComponent,
     ViewAllApprovedLoansComponent,
     ViewPendingLoanRequestComponent,
+    ViewInterestPlansComponent,
     
    ],
   imports: [

@@ -54,7 +54,6 @@ export class DataServiceService {
   deleteRejectedLoan(loanId:number){
     
     return this.http.delete(this.baseUrl + 'reject-loan/'+loanId);
-
   }
   patchGrantLoan(loan:Loan){
     const body=JSON.stringify(loan);

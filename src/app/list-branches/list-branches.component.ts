@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListBranchesComponent implements OnInit {
 
-  message:any;
+  errorMessage:any;
   branches:Branch[]=[];
   addBranch:boolean=false;
   constructor(private service:DataServiceService, private router:Router) { }
@@ -21,14 +21,16 @@ export class ListBranchesComponent implements OnInit {
   viewAllBranches()
   {
     this.service.viewAllBranches().subscribe(
-      response=>{console.log(response);
+      response=>{
         if(response.status !== 200)
         {
-          this.message=response.message;
+          this.errorMessage='Sorry. Currently facing some problem in loading the list of all the branches.';
+          console.log('Response status '+response.status);
         }
-        this.branches = response.data;
-        console.log(this.branches);
-        
+        else{
+          this.branches = response.data;
+        console.log(response);
+        }
       }
     )
   }

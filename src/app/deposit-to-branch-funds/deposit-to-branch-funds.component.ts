@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class DepositToBranchFundsComponent implements OnInit {
   ifscCode:string='';
   amount:number=0;
+  errorMessage ='';
   constructor(private route:ActivatedRoute,private service:DataServiceService,private router:Router) { }
 
   ngOnInit(): void {
@@ -21,7 +22,8 @@ export class DepositToBranchFundsComponent implements OnInit {
     console.log(this.amount);
     console.log(this.ifscCode);
     this.service.depositToBranch(this.ifscCode,this.amount).subscribe(
-      data=>{console.log(data);
+      response=>{console.log(response);
+        
         this.router.navigate(['listBranches']);
       }
     )

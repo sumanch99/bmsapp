@@ -9,12 +9,18 @@ import { Customer } from '../model/cutomer.model';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+  errorMessage:string='';
  public customers:Customer[]=[]
   constructor(private dataService:DataServiceService) { }
   ngOnInit(): void {
     this.dataService.getCustomerList().subscribe(
       response=>{
-       this.customers = response.data;
+       if(response.status !== 200)
+       {console.log(response.status);
+        this.errorMessage ='Sorry. Currently facing some problem in loading the list of all approved customers.'}
+       else{
+         console.log(response);
+       this.customers = response.data;}
       }
     )
   }

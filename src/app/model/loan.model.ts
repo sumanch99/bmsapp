@@ -5,7 +5,7 @@ export class Loan{
     amount:number=0;
 	gurantorAccNo:number=0;
     tenure:number=0;
-	startDate:string='';
+	startDate:Date=new Date();
 	approved:boolean=false;
 
 }

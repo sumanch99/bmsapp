@@ -1,60 +1,29 @@
-<div class="container-fluid">
-    <div class="row pt-2">
-
-        <!--list-group-->
-
-        <div class="list-group col-sm-2 p-2 ml-5">
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Create Account</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Account Summary</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Transactions</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Account Request</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check ATM Request</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Check Loan Request</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify Loan's Rate</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify FD's Rate</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modify RD's Rate</a>
-        </div>
-        <div class="col-sm-9 p-2 mr-2 bg-light">
-            <!--Horizontal list-group-->
-            <div class="list-group list-group-horizontal">
-                <a href="#" class=" list-group-item list-group-item-action list-group-item-dark text-center">View
-                    Customer</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage
-                    Interest Rate</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Complete
-                    Transaction List</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Manage
-                    Branch</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Requests</a>
-            </div>
-            <div class="container mt-3">
-                <h3>Approved Loans</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Loan Id</th>
-                            <th scope="col">Loan Type</th>
-                            <th scope="col">Account Number</th>
-                            <th scope="col">Gurantor Acc. No.</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">Tenure</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let loan of approvedLoans">
-                            <td scope="row">{{loan.loan_id}}</td>
-                            <td>{{loan.loanCode}}</td>
-                            <td>{{loan.accNo}}</td>
-                            <td>{{loan.gurantorAccNo}}</td>
-                            <td>{{loan.amount}}</td>
-                            <td>{{loan.startDate}}</td>
-                            <td>{{loan.tenure}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!--Horizontal list-group-->
+<div class="container col-sm-9 mr-3">
+    <div class="container mt-3">
+        <h3>Approved Loans</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Loan Id</th>
+                    <th scope="col">Loan Type</th>
+                    <th scope="col">Account Number</th>
+                    <th scope="col">Gurantor Acc. No.</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Tenure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let loan of approvedLoans">
+                    <td scope="row">{{loan.loan_id}}</td>
+                    <td>{{loan.loanCode}}</td>
+                    <td>{{loan.accNo}}</td>
+                    <td>{{loan.gurantorAccNo}}</td>
+                    <td>{{loan.amount}}</td>
+                    <td>{{loan.startDate}}</td>
+                    <td>{{loan.tenure}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    </div>
+</div>

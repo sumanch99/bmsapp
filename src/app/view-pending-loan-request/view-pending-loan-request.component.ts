@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Loan } from '../model/loan.model';
 import { DataServiceService } from '../service/data/data-service.service';
@@ -9,9 +10,14 @@ import { DataServiceService } from '../service/data/data-service.service';
 })
 export class ViewPendingLoanRequestComponent implements OnInit {
   pendingLoans: Loan[] = [];
-  constructor(private dataService: DataServiceService) { }
+  constructor(private dataService: DataServiceService, private router:Router) { }
 
   ngOnInit(): void {
+    this.viewAllPendingRequest()
+  }
+
+  viewAllPendingRequest()
+  {
     this.dataService.getPendingLoanRequests().subscribe(
       response => {
         console.log(response.data);
@@ -19,7 +25,6 @@ export class ViewPendingLoanRequestComponent implements OnInit {
       }
     )
   }
-
   onClickGrantLoan(loan: Loan) {
     this.dataService.patchGrantLoan(loan).subscribe(data => {
       console.log(data);
@@ -27,7 +32,10 @@ export class ViewPendingLoanRequestComponent implements OnInit {
   }
   onClickReject(loanId: number) {
     console.log("deleting " + loanId);
-    this.dataService.deleteRejectedLoan(loanId).subscribe();
+    this.dataService.deleteRejectedLoan(loanId).subscribe(
     // window.location.reload();
+    data =>{
+    this.viewAllPendingRequest()}
+    ) 
   }
 }

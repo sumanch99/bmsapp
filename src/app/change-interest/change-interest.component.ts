@@ -11,7 +11,7 @@ export class ChangeInterestComponent implements OnInit {
 
   interestPlan: InterestPlans[] = [];
   successLabel:string=''
-  interestPlanObj: InterestPlans = new InterestPlans;
+  interestPlanObj: InterestPlans = new InterestPlans();
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class ChangeInterestComponent implements OnInit {
       }
     )
   }
-
+  
   onSubmit(ChangeInterestRateForm: any) {
     console.log(ChangeInterestRateForm.value);
 
