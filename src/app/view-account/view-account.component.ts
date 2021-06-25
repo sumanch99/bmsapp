@@ -18,9 +18,7 @@ export class ViewAccountComponent implements OnInit {
   this.dataService.getAccountDetails(accNoFromRoute).subscribe(
       response => {
         console.log(response.data);
-
-
-        this.account = response.data;
+         this.account = response.data;
       }
       )
     }

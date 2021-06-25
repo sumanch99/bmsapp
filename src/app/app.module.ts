@@ -1,3 +1,4 @@
+import { RouterGuardService } from './service/router-guard.service';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,9 @@ import { ViewAccountComponent } from './view-account/view-account.component';
 import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-all-approved-loans.component';
 import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/view-pending-loan-request.component';
 import { ViewInterestPlansComponent } from './view-interest-plans/view-interest-plans.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { AddNewCustomerComponent } from './add-new-customer/add-new-customer.component';
+import { AdminLogoutComponent } from './admin-logout/admin-logout.component';
 
 
 @NgModule({
@@ -41,6 +45,9 @@ import { ViewInterestPlansComponent } from './view-interest-plans/view-interest-
     ViewAllApprovedLoansComponent,
     ViewPendingLoanRequestComponent,
     ViewInterestPlansComponent,
+    CustomerLoginComponent,
+    AddNewCustomerComponent,
+    AdminLogoutComponent,
     
    ],
   imports: [
@@ -49,7 +56,7 @@ import { ViewInterestPlansComponent } from './view-interest-plans/view-interest-
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RouterGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

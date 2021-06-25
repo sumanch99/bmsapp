@@ -1,0 +1,74 @@
+<div class="container col-sm-8 mr-4">
+
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+        <form #createAccount="ngForm" (ngSubmit)="!createAccount.invalid && onSubmit(createAccount)">
+
+            <div class="form-group">
+                <label for="aadharNo">Aadhar Number</label>
+                <input ngModel name="aadharNo" id="aadharNo" type="text" class="form-control" required
+                    pattern="[2-9]{1}[0-9]{11}" #aadharNo="ngModel">
+            </div>
+            <div class="alert alert-warning" *ngIf="aadharNo.invalid && aadharNo.dirty">
+                Invalid AADHAR NO. Requirements- Length: 12, cant't start with 0 or 1. <br> Example: 201234567893
+            </div>
+
+            <div class="form-group">
+                <label for="accountNumber">Account Number</label>
+                <input ngModel name="accountNumber" type="number" id="accountNumber" class="form-control" required
+                    #accountNumber="ngModel">
+            </div>
+            <div class="alert alert-warning" *ngIf="accountNumber.invalid && accountNumber.dirty">
+                Type in the account number
+            </div>
+            <div class="form-group">
+                <label for="ifsc">IFSC CODE</label>
+                <input ngModel name="ifsc" id="ifsc" type="text" class="form-control" required minlength="11"
+                    maxlength="12" pattern="^[A-Z]{4}0[A-Z0-9]{6}$" #ifsc="ngModel">
+            </div>
+            <div class="alert alert-warning" *ngIf="ifsc.invalid && ifsc.dirty">
+                Invalid IFSC Code. Requirements- Length: 11 (Alphanumeric), Begin(4): A-Z, 5th character: 0, End(6): A-Z
+                or 0-9.<br> Example: ACBD0123456
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                -<input ngModel name="phoneNumber" id="phoneNumber" type="number" class="form-control" required
+                    pattern="^[7-9]{1}[0-9]{9}$" #phoneNumber="ngModel">
+            </div>
+            <div class="alert alert-warning" *ngIf="phoneNumber.dirty && phoneNumber.invalid">
+                Invalid Phone Number. Type in correct Phone Number having 10 digits.
+            </div>
+            <div class="form-group">
+                <label for="introducerAccno">Introducer Account NUmber</label>
+
+                <input type="introducerAccno" class="form-control" id="introducerAccno" ngModel name="introducerAccno"
+                    required #introducerAccno="ngModel">
+            </div>
+            <div class="alert alert-warning" *ngIf="introducerAccno.dirty && introducerAccno.invalid">
+                Account Number of Introducer required
+            </div>
+
+            <div class="form-group">
+                <label for="nomineeAadharNo">Nominee Aadhar Number</label>
+                <input ngModel name="nomineeAadharNo" id="nomineeAadharNo" type="text" class="form-control" required
+                     #nomineeAadharNo="ngModel">
+            </div>
+            <div class="alert alert-warning" *ngIf="nomineeAadharNo.dirty && nomineeAadharNo.invalid">
+                Invalid AADHAR NO. Requirements- Length: 12, cant't start with 0 or 1. <br> Example: 201234567893
+            </div>
+            
+                <div class="form-group">
+                    <label for="accType">Account Type &nbsp; &nbsp; &nbsp;</label>
+                    <select class=" form-group form-select mt-4" name="accType" id="accType" required
+                        [(ngModel)]="accountType" #accType="ngModel">
+                        <option selected>Select Account Type</option>
+                        <option *ngFor="let type of accountTypes">{{type}}</option>
+                    </select>
+                </div>
+                <div class="alert alert-warning" *ngIf="accType.dirty && accType.invalid">Select Account Type</div>
+                <button type="submit" [disabled]="createAccount.invalid" class="btn btn-primary" id="subButn">Submit</button>
+            
+        </form>
+    </div>
+</div>

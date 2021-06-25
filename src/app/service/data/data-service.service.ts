@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Account } from 'src/app/model/account.model';
 import { Branch } from 'src/app/model/branch.model';
 import { InterestPlans } from 'src/app/model/interest-plans.model';
 import { Loan } from 'src/app/model/loan.model';
@@ -58,6 +59,10 @@ export class DataServiceService {
   patchGrantLoan(loan:Loan){
     const body=JSON.stringify(loan);
     return this.http.patch(this.baseUrl+'grant-loan',body);
+  }
+  createAccount(account:Account)
+  {
+    return this.http.post(this.baseUrl+'create-account',account);
   }
 }
 
