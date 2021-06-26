@@ -24,6 +24,7 @@ import { ViewInterestPlansComponent } from './view-interest-plans/view-interest-
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
 import { AddNewCustomerComponent } from './add-new-customer/add-new-customer.component';
 import { AdminLogoutComponent } from './admin-logout/admin-logout.component';
+import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { AdminLogoutComponent } from './admin-logout/admin-logout.component';
     CustomerLoginComponent,
     AddNewCustomerComponent,
     AdminLogoutComponent,
+    ViewAtmRequestsComponent,
     
    ],
   imports: [

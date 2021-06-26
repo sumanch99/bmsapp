@@ -4,7 +4,7 @@ export class Account{
 	balance: number=0;
 	active: boolean=false;
 	ifscCode: string='';
-	adhaarNumber:number=0;
+	adhaarNumber:string='';
 	phoneNumber: string='';
 	introducerAccountNo: number=0;
 	nomineeAdhaarNo: string='';

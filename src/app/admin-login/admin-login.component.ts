@@ -21,12 +21,16 @@ export class AdminLoginComponent implements OnInit {
     this.password = adminLogin.value.pwd;
     console.log(this.admin);
     console.log(this.password);
-    if(this.auth.adminAuthenticate(this.admin,this.password))
-    {
-      this.errorMessage=false;
-      this.router.navigate(['admin-dashboard']);
-    }
-    this.errorMessage=true;
+    this.auth.adminAuthenticate(this.admin,this.password).subscribe(
+      data=>{
+        console.log(data)
+        this.router.navigate(['admin-dashboard']);
+      },
+      error=>{
+        console.log(error);
+        this.errorMessage=true;
+      }
+    )
   }
 
 }

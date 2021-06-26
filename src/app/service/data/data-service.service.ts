@@ -64,5 +64,12 @@ export class DataServiceService {
   {
     return this.http.post(this.baseUrl+'create-account',account);
   }
+  getPendingATMRequests(){
+    return this.http.get<any>(this.baseUrl+'view-all-pending-debit-cards');
+  }
+  deleteRejectedDebitCardRequest(cardNo:number){
+    
+    return this.http.delete(this.baseUrl + 'reject-debit-card/'+cardNo);
+  }
 }
 

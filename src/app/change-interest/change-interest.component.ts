@@ -11,6 +11,7 @@ export class ChangeInterestComponent implements OnInit {
 
   interestPlan: InterestPlans[] = [];
   successLabel:string=''
+  oldRate:number=0;
   interestPlanObj: InterestPlans = new InterestPlans();
   constructor(private dataService: DataServiceService) { }
 
@@ -28,6 +29,7 @@ export class ChangeInterestComponent implements OnInit {
   }
   
   onSubmit(ChangeInterestRateForm: any) {
+    console.log(this.interestPlanObj)
     console.log(ChangeInterestRateForm.value);
 
     this.dataService.postChangedInterestRate(this.interestPlanObj)

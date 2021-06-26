@@ -1,5 +1,5 @@
 export class InterestPlans{
     plan:String='';
-    rate!: number;
+    rate: number=0;
 
 }

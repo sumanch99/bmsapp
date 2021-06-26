@@ -17,6 +17,7 @@ import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/vie
 import { ChangeInterestComponent } from './change-interest/change-interest.component';
 import { ViewAccountComponent } from './view-account/view-account.component';
 import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-all-approved-loans.component';
+import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.component';
 
 
 const routes: Routes = [
@@ -72,8 +73,13 @@ const routes: Routes = [
     path:'view-interest-plans',component:ViewInterestPlansComponent,canActivate:[RouterGuardService]
   },
   {
+    //To view all pending atm requests
+    path:'view-atm-requests',component:ViewAtmRequestsComponent,canActivate:[RouterGuardService]
+  },
+  {
     path:'admin-Logout',component:AdminLogoutComponent,canActivate:[RouterGuardService]
   },
+  
   {
     //Page to occur in case of an invalid url
     path:'**',component:ErrorpageComponent
