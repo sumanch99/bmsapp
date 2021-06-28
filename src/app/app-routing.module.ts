@@ -118,7 +118,7 @@ const routes: Routes = [
     path:'customer-check-transactions',component:CustomerCheckTransactionsComponent
   },
   {
-    path:'customer-logout',component:CustomerLogoutComponent
+    path:'customer-logout', component:CustomerLogoutComponent
   },
   {
     //Page to occur in case of an invalid url
