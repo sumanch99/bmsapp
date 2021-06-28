@@ -1,3 +1,5 @@
+import { HomeRouteGuardService } from './service/home/home-route-guard.service';
+import { CustomerRouteGuardService } from './service/customer/customer-route-guard.service';
 import { CustomerViewStatementComponent } from './customer-view-statement/customer-view-statement.component';
 import { CustomerMyAccountsComponent } from './customer-my-accounts/customer-my-accounts.component';
 import { CustomerAccountTransferComponent } from './customer-account-transfer/customer-account-transfer.component';
@@ -23,7 +25,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { ListBranchesComponent } from './list-branches/list-branches.component';
 import { BranchComponent } from './branch/branch.component';
 import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/view-pending-loan-request.component';
@@ -39,6 +41,11 @@ const routes: Routes = [
   {
     path:'',component:WelcomeComponent
   },
+  {
+    path:'welcome',component:WelcomeComponent
+  },
+  
+
   {
     path:'app-admin-login',component:AdminLoginComponent
   },
@@ -110,31 +117,31 @@ const routes: Routes = [
     path:'customer-login',component:CustomerLoginComponent
   },
   {
-    path:'customer-dashboard',component:CustomerDashboardComponent
+    path:'customer-dashboard',component:CustomerDashboardComponent,canActivate:[CustomerRouteGuardService]
   },
   {
-    path:'customer-deposit',component:CustomerDepositComponent
+    path:'customer-deposit',component:CustomerDepositComponent,canActivate:[CustomerRouteGuardService]
   },
   {
-    path:'customer-withdraw',component:CustomerWithdrawComponent
+    path:'customer-withdraw',component:CustomerWithdrawComponent,canActivate:[CustomerRouteGuardService]
   },
   {
-    path:'customer-check-transactions',component:CustomerCheckTransactionsComponent
+    path:'customer-check-transactions',component:CustomerCheckTransactionsComponent,canActivate:[CustomerRouteGuardService]
   },
   {
-    path:'customer-check-balance',component:CustomerCheckBalanceComponent
+    path:'customer-check-balance',component:CustomerCheckBalanceComponent,canActivate:[CustomerRouteGuardService]
   },
   {
-    path:'customer-account-transfer',component:CustomerAccountTransferComponent
+    path:'customer-account-transfer',component:CustomerAccountTransferComponent,canActivate:[CustomerRouteGuardService]
   },
   {
-    path:'customer-my-accounts',component:CustomerMyAccountsComponent 
+    path:'customer-my-accounts',component:CustomerMyAccountsComponent,canActivate:[CustomerRouteGuardService] 
   },
   {
-    path:'view-statement',component:CustomerViewStatementComponent
+    path:'view-statement',component:CustomerViewStatementComponent,canActivate:[CustomerRouteGuardService]
   },
   {
-    path:'customer-logout', component:CustomerLogoutComponent
+    path:'customer-logout', component:CustomerLogoutComponent,canActivate:[CustomerRouteGuardService]
   },
   {
     //Page to occur in case of an invalid url

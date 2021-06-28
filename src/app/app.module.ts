@@ -1,3 +1,5 @@
+import { CustomerRouteGuardService } from './service/customer/customer-route-guard.service';
+import { HomeRouteGuardService } from './service/home/home-route-guard.service';
 import { CustomerHttpInterceptorService } from './service/customer/customer-http-interceptor.service';
 import { HttpInterceptorService } from './service/http-interceptor.service';
 import { RouterGuardService } from './service/router-guard.service';
@@ -88,7 +90,7 @@ import { CustomerViewStatementComponent } from './customer-view-statement/custom
     HttpClientModule,
     FormsModule
   ],
-  providers: [RouterGuardService,
+  providers: [HomeRouteGuardService, RouterGuardService,CustomerRouteGuardService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
