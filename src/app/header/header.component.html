@@ -7,10 +7,13 @@
             </a>
         </div>
         <ul class="navbar-nav ml-auto">
-            <li><a class="nav-link" *ngIf="aut.logged()===true" routerLink="/admin-Logout"
+            <li><a class="nav-link" *ngIf="aut.logged()===true || custAuth.logged()===true" routerLink="/admin-Logout"
                     style="color: wheat;">Logout</a></li>
         </ul>
     </nav>
+    
+    <!--Dashboard for Employee-->
+
     <div class="container col-sm-3 ml-1">
         <div class="list-group" *ngIf="aut.logged()===true">
             <a routerLink='/listBranches' class="list-group-item list-group-item-action list-group-item-dark">Manage
@@ -41,4 +44,26 @@
             </div>
         </div>
     </div>
+    <!--Employee Dashboard Ends-->
+
+    <!--Customer Dashboard-->
+    <div class="container col-sm-3 ml-1">
+        <div class="list-group" *ngIf="custAuth.logged()===true">
+            
+            <div class="dropdown">
+                <div class="list-group-item list-group-item-action list-group-item-dark dropdown-toggle"
+                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Personal Banking</div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a routerLink="/customer-deposit"
+                        class="list-group-item list-group-item-action list-group-item-dark">Deposit</a>
+                    <a routerLink="/customer-withdraw"
+                        class="list-group-item list-group-item-action list-group-item-dark">Withdraw</a>
+                </div>
+            </div>
+            <a routerLink="/customer-check-transactions"
+                class="list-group-item list-group-item-action list-group-item-dark">Check Transactions</a>
+
+        </div>
+    </div>
+    <!--Customer Dashboard Ends-->
 </header>

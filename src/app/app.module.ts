@@ -1,3 +1,4 @@
+import { CustomerHttpInterceptorService } from './service/customer/customer-http-interceptor.service';
 import { HttpInterceptorService } from './service/http-interceptor.service';
 import { RouterGuardService } from './service/router-guard.service';
 import { FormsModule } from '@angular/forms';
@@ -30,6 +31,12 @@ import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.
 import { AtmHomepageComponent } from './atm-homepage/atm-homepage.component';
 import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
 import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { CustomerDepositComponent } from './customer-deposit/customer-deposit.component';
+import { CustomerWithdrawComponent } from './customer-withdraw/customer-withdraw.component';
+import { CustomerCheckTransactionsComponent } from './customer-check-transactions/customer-check-transactions.component';
+import { CustomerLogoutComponent } from './customer-logout/customer-logout.component';
 
 
 @NgModule({
@@ -59,8 +66,14 @@ import { CustomerSignupComponent } from './customer-signup/customer-signup.compo
     AtmHomepageComponent,
     AtmWithdrawComponent,
     CustomerSignupComponent,
-    
-   ],
+    WelcomeComponent,
+    CustomerDashboardComponent,
+    CustomerDepositComponent,
+    CustomerWithdrawComponent,
+    CustomerCheckTransactionsComponent,
+    CustomerLogoutComponent,
+
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -72,6 +85,11 @@ import { CustomerSignupComponent } from './customer-signup/customer-signup.compo
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
       multi: true
+    },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:CustomerHttpInterceptorService,
+      multi:true
     }],
   bootstrap: [AppComponent]
 })

@@ -19,7 +19,7 @@
                     <td scope="row">{{loan.loan_id}}</td>
                     <td>{{loan.loanCode}}</td>
                     <td><a [routerLink]="['/view-account', loan.accNo]">{{loan.accNo}}</a></td>
-                    <td><a [routerLink]="['/view-account', loan.accNo]">{{loan.gurantorAccNo}}</a></td>
+                    <td><a [routerLink]="['/view-account', loan.gurantorAccNo]">{{loan.gurantorAccNo}}</a></td>
                     <td>{{loan.amount}}</td>
                     <td>{{loan.tenure}}</td>
                     <td><button class="btn btn-primary" (click)="onClickGrantLoan(loan)">Grant Loan</button>

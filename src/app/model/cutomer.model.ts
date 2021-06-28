@@ -15,7 +15,6 @@ export class Customer
 	emailId:string='';
 	phoneNumber:string ='';
 	adhaarNo:string='';
-	approved:boolean=false;
     constructor()
     {
         

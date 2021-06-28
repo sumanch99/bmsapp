@@ -1,3 +1,8 @@
+import { CustomerLogoutComponent } from './customer-logout/customer-logout.component';
+import { CustomerWithdrawComponent } from './customer-withdraw/customer-withdraw.component';
+import { CustomerDepositComponent } from './customer-deposit/customer-deposit.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
 import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.component';
 import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
@@ -22,11 +27,13 @@ import { ChangeInterestComponent } from './change-interest/change-interest.compo
 import { ViewAccountComponent } from './view-account/view-account.component';
 import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-all-approved-loans.component';
 import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CustomerCheckTransactionsComponent } from './customer-check-transactions/customer-check-transactions.component';
 
 
 const routes: Routes = [
   {
-    path:'',component:AdminLoginComponent
+    path:'',component:WelcomeComponent
   },
   {
     path:'app-admin-login',component:AdminLoginComponent
@@ -94,6 +101,24 @@ const routes: Routes = [
   },
   {
     path:'customer-signup',component:CustomerSignupComponent
+  },
+  {
+    path:'customer-login',component:CustomerLoginComponent
+  },
+  {
+    path:'customer-dashboard',component:CustomerDashboardComponent
+  },
+  {
+    path:'customer-deposit',component:CustomerDepositComponent
+  },
+  {
+    path:'customer-withdraw',component:CustomerWithdrawComponent
+  },
+  {
+    path:'customer-check-transactions',component:CustomerCheckTransactionsComponent
+  },
+  {
+    path:'customer-logout',component:CustomerLogoutComponent
   },
   {
     //Page to occur in case of an invalid url
