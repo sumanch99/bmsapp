@@ -1,3 +1,7 @@
+import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
+import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.component';
+import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
+import { AtmHomepageComponent } from './atm-homepage/atm-homepage.component';
 import { RouterGuardService } from './service/router-guard.service';
 
 import { AdminLogoutComponent } from './admin-logout/admin-logout.component';
@@ -79,7 +83,18 @@ const routes: Routes = [
   {
     path:'admin-Logout',component:AdminLogoutComponent,canActivate:[RouterGuardService]
   },
-  
+  {
+    path: 'atm-homepage', component: AtmHomepageComponent
+  },
+  {
+    path: "atm-withdraw", component: AtmWithdrawComponent
+  },
+  {
+    path: "atm-check-balance", component: AtmCheckBalanceComponent
+  },
+  {
+    path:'customer-signup',component:CustomerSignupComponent
+  },
   {
     //Page to occur in case of an invalid url
     path:'**',component:ErrorpageComponent

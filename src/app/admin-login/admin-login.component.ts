@@ -23,10 +23,12 @@ export class AdminLoginComponent implements OnInit {
     console.log(this.password);
     this.auth.adminAuthenticate(this.admin,this.password).subscribe(
       data=>{
-        console.log(data)
-        this.router.navigate(['admin-dashboard']);
+        console.log("here");
+        console.log(data);
+        this.router.navigateByUrl('/admin-dashboard');
       },
       error=>{
+        console.log("there");
         console.log(error);
         this.errorMessage=true;
       }

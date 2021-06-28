@@ -1,5 +1,6 @@
-import { DebitCard } from './../model/debit-card.models';
+
 import { Component, OnInit } from '@angular/core';
+import { DebitCard } from '../model/debit-card.model';
 
 import { DataServiceService } from '../service/data/data-service.service';
 

@@ -1,3 +1,4 @@
+import { HttpInterceptorService } from './service/http-interceptor.service';
 import { RouterGuardService } from './service/router-guard.service';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { CustomerComponent } from './customer/customer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { AdminSetupComponent } from './admin-setup/admin-setup.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
@@ -25,6 +26,10 @@ import { CustomerLoginComponent } from './customer-login/customer-login.componen
 import { AddNewCustomerComponent } from './add-new-customer/add-new-customer.component';
 import { AdminLogoutComponent } from './admin-logout/admin-logout.component';
 import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.component';
+import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.component';
+import { AtmHomepageComponent } from './atm-homepage/atm-homepage.component';
+import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
+import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 
 
 @NgModule({
@@ -50,6 +55,10 @@ import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.
     AddNewCustomerComponent,
     AdminLogoutComponent,
     ViewAtmRequestsComponent,
+    AtmCheckBalanceComponent,
+    AtmHomepageComponent,
+    AtmWithdrawComponent,
+    CustomerSignupComponent,
     
    ],
   imports: [
@@ -58,7 +67,12 @@ import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.
     HttpClientModule,
     FormsModule
   ],
-  providers: [RouterGuardService],
+  providers: [RouterGuardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

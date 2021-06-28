@@ -1,6 +1,6 @@
 export class DebitCard{
     cardNo:number=0;
-    pinNo:number | undefined;
+    pin:number | undefined;
     cvvNo:number | undefined;
     accountNo:number | undefined;
     approved:boolean | undefined;

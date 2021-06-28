@@ -11,7 +11,8 @@ import { Loan } from 'src/app/model/loan.model';
 })
 export class DataServiceService {
 
-  private baseUrl:string='http://bmsapi.herokuapp.com/admin/';
+  //private baseUrl:string='http://bmsapi.herokuapp.com/admin/';
+  private baseUrl:string='http://localhost:8080/admin/';
   constructor(private http:HttpClient) { }
   getCustomerList()
   {

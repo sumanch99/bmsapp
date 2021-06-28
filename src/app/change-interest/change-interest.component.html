@@ -8,7 +8,7 @@
         <select class=" form-group form-select mt-4" aria-label="Default select example" name="plan" id="plan" required
           [(ngModel)]="interestPlanObj.plan" >
           <option selected>Select Interest Type</option>
-          <option *ngFor="let planobj of interestPlan">{{planobj.plan +'-'+planobj.rate}}</option>
+          <option *ngFor="let planobj of interestPlan">{{planobj.plan}}</option>
         </select>
         <br>
         
