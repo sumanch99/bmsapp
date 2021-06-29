@@ -1,3 +1,4 @@
+import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 import { HomeRouteGuardService } from './service/home/home-route-guard.service';
 import { CustomerRouteGuardService } from './service/customer/customer-route-guard.service';
 import { CustomerViewStatementComponent } from './customer-view-statement/customer-view-statement.component';
@@ -65,9 +66,14 @@ const routes: Routes = [
     path:'listBranches',component:ListBranchesComponent,canActivate:[RouterGuardService]
   },
   {
+    //To get the list of all the branches of this bank.
+    path:'manage-accounts',component:ManageAccountsComponent,canActivate:[RouterGuardService]
+  },
+  {
     //To get the list of all the transactions that have occurred
     path:'allTransactions',component:TransactionComponent,canActivate:[RouterGuardService]
   },
+
   {
     //To add a new branch
     path:'branchManipulations',component:BranchComponent,canActivate:[RouterGuardService]
@@ -151,7 +157,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

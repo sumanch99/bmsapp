@@ -1,9 +1,8 @@
-<div class="container col-sm-8 mr-4">
-
+<div class="container col-sm-9 mr-2">
     <div class="table-wrapper-scroll-y my-custom-scrollbar table-responsive">
-        <h2>New Customer Account Creation</h2>
+        <h2 style="text-align: center;">New Customer Account Creation</h2>
         <form #createAccount="ngForm" (ngSubmit)="!createAccount.invalid && onSubmit(createAccount)">
-
+ 
             <div class="form-group">
                 <label for="aadharNo">Aadhar Number</label>
                 <input ngModel name="aadharNo" id="aadharNo" type="text" class="form-control" required
@@ -11,15 +10,6 @@
             </div>
             <div class="alert alert-warning" *ngIf="aadharNo.invalid && aadharNo.dirty">
                 Invalid AADHAR NO. Requirements- Length: 12, cant't start with 0 or 1. <br> Example: 201234567893
-            </div>
-
-            <div class="form-group">
-                <label for="accountNumber">Account Number</label>
-                <input ngModel name="accountNumber" type="number" id="accountNumber" class="form-control" required
-                    #accountNumber="ngModel">
-            </div>
-            <div class="alert alert-warning" *ngIf="accountNumber.invalid && accountNumber.dirty">
-                Type in the account number
             </div>
             <div class="form-group">
                 <label for="phoneNumber">Phone Number</label>

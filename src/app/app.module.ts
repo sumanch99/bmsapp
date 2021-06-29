@@ -43,6 +43,7 @@ import { CustomerCheckBalanceComponent } from './customer-check-balance/customer
 import { CustomerAccountTransferComponent } from './customer-account-transfer/customer-account-transfer.component';
 import { CustomerMyAccountsComponent } from './customer-my-accounts/customer-my-accounts.component';
 import { CustomerViewStatementComponent } from './customer-view-statement/customer-view-statement.component';
+import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { CustomerViewStatementComponent } from './customer-view-statement/custom
     CustomerAccountTransferComponent,
     CustomerMyAccountsComponent,
     CustomerViewStatementComponent,
+    ManageAccountsComponent,
 
   ],
   imports: [

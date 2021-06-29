@@ -1,5 +1,5 @@
 <div class="container col-sm-9 mr-2">
-    <h3>Pending Loan Requests</h3>
+    <h3 style="text-align: center;">Pending Loan Requests</h3>
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
         <table class="table table-striped mb-0">
             <thead>
@@ -22,10 +22,9 @@
                     <td><a [routerLink]="['/view-account', loan.gurantorAccNo]">{{loan.gurantorAccNo}}</a></td>
                     <td>{{loan.amount}}</td>
                     <td>{{loan.tenure}}</td>
-                    <td><button class="btn btn-primary" (click)="onClickGrantLoan(loan)">Grant Loan</button>
+                    <td><button class="btn btn-primary" (click)="onClickGrantLoan(loan)">Grant</button>
                     </td>
-                    <td><button class="btn btn-danger" (click)="onClickReject(loan.loan_id)">Reject
-                            Loan</button>
+                    <td><button class="btn btn-danger" (click)="onClickReject(loan.loan_id)">Reject</button>
                     </td>
                 </tr>
             </tbody>

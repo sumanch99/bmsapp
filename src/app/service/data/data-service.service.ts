@@ -14,6 +14,15 @@ export class DataServiceService {
   //private baseUrl:string='http://bmsapi.herokuapp.com/admin/';
   private baseUrl:string='http://localhost:8080/admin/';
   constructor(private http:HttpClient) { }
+  getAllAccounts(){
+    return this.http.get<any>(this.baseUrl + 'get-all-accounts')
+  }
+  disableAccount(accountNo:any){
+    return this.http.put<any>(this.baseUrl + `disable-account/${accountNo}`,null)
+  }
+  enableAccount(accountNo:any){
+    return this.http.put<any>(this.baseUrl + `enable-account/${accountNo}`,null)
+  }
   getCustomerList()
   {
     return this.http.get<any>(this.baseUrl+'customer-list');
@@ -71,6 +80,10 @@ export class DataServiceService {
   deleteRejectedDebitCardRequest(cardNo:number){
     
     return this.http.delete(this.baseUrl + 'reject-debit-card/'+cardNo);
+  }
+  acceptDebitCardRequest(cardNo:number){
+    console.log("here")
+    return this.http.put<any>(this.baseUrl + `approve-debit-card/${cardNo}`,null);
   }
 }
 
