@@ -1,3 +1,8 @@
+import { CustomerMyRdComponent } from './customer-my-rd/customer-my-rd.component';
+import { CustomerMyfdComponent } from './customer-myfd/customer-myfd.component';
+import { CustomerMyLoanComponent } from './customer-my-loan/customer-my-loan.component';
+import { CustomerApplyForRdComponent } from './customer-apply-for-rd/customer-apply-for-rd.component';
+import { CustomerApplyForFdComponent } from './customer-apply-for-fd/customer-apply-for-fd.component';
 import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 import { HomeRouteGuardService } from './service/home/home-route-guard.service';
 import { CustomerRouteGuardService } from './service/customer/customer-route-guard.service';
@@ -35,7 +40,7 @@ import { ViewAccountComponent } from './view-account/view-account.component';
 import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-all-approved-loans.component';
 import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { CustomerCheckTransactionsComponent } from './customer-check-transactions/customer-check-transactions.component';
+import { CustomerApplyForLoanComponent } from './customer-apply-for-loan/customer-apply-for-loan.component';
 
 
 const routes: Routes = [
@@ -117,11 +122,12 @@ const routes: Routes = [
     path: "atm-check-balance", component: AtmCheckBalanceComponent
   },
   {
-    path:'customer-signup',component:CustomerSignupComponent
-  },
-  {
     path:'customer-login',component:CustomerLoginComponent
   },
+  {
+    path:'customer-signup',component:CustomerSignupComponent
+  },
+  
   {
     path:'customer-dashboard',component:CustomerDashboardComponent,canActivate:[CustomerRouteGuardService]
   },
@@ -130,9 +136,6 @@ const routes: Routes = [
   },
   {
     path:'customer-withdraw',component:CustomerWithdrawComponent,canActivate:[CustomerRouteGuardService]
-  },
-  {
-    path:'customer-check-transactions',component:CustomerCheckTransactionsComponent,canActivate:[CustomerRouteGuardService]
   },
   {
     path:'customer-check-balance',component:CustomerCheckBalanceComponent,canActivate:[CustomerRouteGuardService]
@@ -145,6 +148,24 @@ const routes: Routes = [
   },
   {
     path:'view-statement',component:CustomerViewStatementComponent,canActivate:[CustomerRouteGuardService]
+  },
+  {
+    path:'apply-for-loan',component:CustomerApplyForLoanComponent,canActivate:[CustomerRouteGuardService]
+  },
+  {
+    path:'apply-for-fd',component:CustomerApplyForFdComponent,canActivate:[CustomerRouteGuardService]
+  }, 
+  {
+    path:'apply-for-rd',component:CustomerApplyForRdComponent,canActivate:[CustomerRouteGuardService]
+  },
+  {
+    path:'my-loans',component:CustomerMyLoanComponent,canActivate:[CustomerRouteGuardService]
+  },
+  {
+    path:'my-fd',component:CustomerMyfdComponent,canActivate:[CustomerRouteGuardService]
+  },
+  {
+    path:'my-rd',component:CustomerMyRdComponent,canActivate:[CustomerRouteGuardService]
   },
   {
     path:'customer-logout', component:CustomerLogoutComponent,canActivate:[CustomerRouteGuardService]

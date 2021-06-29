@@ -1,3 +1,7 @@
+import { Observable } from 'rxjs';
+import { RecurringDeposit } from './../../model/recurring-deposit.model';
+import { FixedDeposit } from './../../model/fixed-deposit.model';
+import { Loan } from 'src/app/model/loan.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Customer } from 'src/app/model/cutomer.model';
@@ -12,7 +16,7 @@ export class CustomerService {
   private baseUrl: string = 'http://localhost:8080/customer/';
 
   customerSignUp(customer:Customer){
-    return this.http.post(this.baseUrl+'signup',customer);
+    return this.http.post(this.baseUrl+'customer-signup',customer);
   }
   getAllAccounts()
   {
@@ -38,5 +42,29 @@ export class CustomerService {
   viewStatement(accNo:number)
   {
     return this.http.get(this.baseUrl+'view-statement/'+accNo);
+  }
+  getInterestRateList() {
+    return this.http.get<any>(this.baseUrl + 'view-interest-plans');
+  }
+  customerApplyLoan(loan:Loan){
+    return this.http.post(this.baseUrl+'apply-loan',loan);
+  }
+  customerGetAllAccounts(userId:any){
+    return this.http.get(this.baseUrl+'get-all-accounts/'+userId);
+  }
+  customerApplyForFd(fixedDeposit:FixedDeposit){
+    return this.http.post(this.baseUrl+'apply-fd',fixedDeposit);
+  }
+  customerApplyForRd(recurringDeposit:RecurringDeposit){
+    return this.http.post(this.baseUrl+'apply-rd',recurringDeposit);
+  }
+  customerMyLoans(userId:any):Observable<any>{
+    return this.http.get(this.baseUrl+'view-my-loans/'+userId);
+  }
+  customerMyFd(accountNumber:number):Observable<any>{
+    return this.http.get(this.baseUrl+"view-my-fd/"+accountNumber);
+  }
+  customerMyRd(accountNumber:number):Observable<any>{
+    return this.http.get(this.baseUrl+'view-my-rd/'+accountNumber);
   }
 }

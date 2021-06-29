@@ -37,13 +37,18 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { CustomerDepositComponent } from './customer-deposit/customer-deposit.component';
 import { CustomerWithdrawComponent } from './customer-withdraw/customer-withdraw.component';
-import { CustomerCheckTransactionsComponent } from './customer-check-transactions/customer-check-transactions.component';
 import { CustomerLogoutComponent } from './customer-logout/customer-logout.component';
 import { CustomerCheckBalanceComponent } from './customer-check-balance/customer-check-balance.component';
 import { CustomerAccountTransferComponent } from './customer-account-transfer/customer-account-transfer.component';
 import { CustomerMyAccountsComponent } from './customer-my-accounts/customer-my-accounts.component';
 import { CustomerViewStatementComponent } from './customer-view-statement/customer-view-statement.component';
 import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
+import { CustomerApplyForFdComponent } from './customer-apply-for-fd/customer-apply-for-fd.component';
+import { CustomerApplyForRdComponent } from './customer-apply-for-rd/customer-apply-for-rd.component';
+import { CustomerApplyForLoanComponent } from './customer-apply-for-loan/customer-apply-for-loan.component';
+import { CustomerMyLoanComponent } from './customer-my-loan/customer-my-loan.component';
+import { CustomerMyRdComponent } from './customer-my-rd/customer-my-rd.component';
+import { CustomerMyfdComponent } from './customer-myfd/customer-myfd.component';
 
 
 @NgModule({
@@ -77,13 +82,18 @@ import { ManageAccountsComponent } from './manage-accounts/manage-accounts.compo
     CustomerDashboardComponent,
     CustomerDepositComponent,
     CustomerWithdrawComponent,
-    CustomerCheckTransactionsComponent,
     CustomerLogoutComponent,
     CustomerCheckBalanceComponent,
     CustomerAccountTransferComponent,
     CustomerMyAccountsComponent,
     CustomerViewStatementComponent,
     ManageAccountsComponent,
+    CustomerApplyForFdComponent,
+    CustomerApplyForRdComponent,
+    CustomerApplyForLoanComponent,
+    CustomerMyLoanComponent,
+    CustomerMyRdComponent,
+    CustomerMyfdComponent,
 
   ],
   imports: [
