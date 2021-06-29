@@ -1,0 +1,25 @@
+<div class="container col-sm-8 mr-5">
+    <div class="alert alert-warning" *ngIf="errorMessage">{{errorMessage}}</div>
+    <h3>List of Transactions</h3>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+        <table class="table table-striped mb-0">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>From Account</th>
+                    <th>To Account</th>
+                    <th>Date and Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactions">
+                    <td>{{transaction.amount}}</td>
+                    <td>{{transaction.fromAccount}}</td>
+                    <td>{{transaction.toAccount}}</td>
+                    <td>{{transaction.date | date:'dd/MM/yyyy hh:mm:ss aa zzzz'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
