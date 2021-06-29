@@ -34,6 +34,8 @@ import { CustomerRouteGuardService } from './service/customer/customer-route-gua
 import { CustomerApplyForFdComponent } from './customer-apply-for-fd/customer-apply-for-fd.component';
 import { CustomerApplyForRdComponent } from './customer-apply-for-rd/customer-apply-for-rd.component';
 import { CustomerMyLoanComponent } from './customer-my-loan/customer-my-loan.component';
+import { CustomerMyfdComponent } from './customer-myfd/customer-myfd.component';
+import { CustomerMyRdComponent } from './customer-my-rd/customer-my-rd.component';
 
 
 const routes: Routes = [
@@ -136,6 +138,12 @@ const routes: Routes = [
   },
   {
     path:'my-loans',component:CustomerMyLoanComponent
+  },
+  {
+    path:'my-fd',component:CustomerMyfdComponent
+  },
+  {
+    path:'my-rd',component:CustomerMyRdComponent
   },
   {
     //Page to occur in case of an invalid url

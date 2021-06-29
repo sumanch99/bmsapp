@@ -36,4 +36,10 @@ export class CustomerService {
   customerMyLoans(userId:any):Observable<any>{
     return this.http.get(this.baseUrl+'view-my-loans/'+userId);
   }
+  customerMyFd(accountNumber:number):Observable<any>{
+    return this.http.get(this.baseUrl+"view-my-fd/"+accountNumber);
+  }
+  customerMyRd(accountNumber:number):Observable<any>{
+    return this.http.get(this.baseUrl+'view-my-rd/'+accountNumber);
+  }
 }
